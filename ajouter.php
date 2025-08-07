@@ -1,24 +1,24 @@
-<?php require 'header.php'; ?>
-
-<form action="traitement.php" method="POST">
-    <div class="champ-formulaire">
-        <label for="titre">Titre de l'œuvre</label>
-        <input type="text" name="titre" id="titre">
-    </div>
-    <div class="champ-formulaire">
-        <label for="artiste">Auteur de l'œuvre</label>
-        <input type="text" name="artiste" id="artiste">
-    </div>
-    <div class="champ-formulaire">
-        <label for="image">URL de l'image</label>
-        <input type="url" name="image" id="image">
-    </div>
-    <div class="champ-formulaire">
-        <label for="description">Description</label>
-        <textarea name="description" id="description"></textarea>
-    </div>
-
-    <input type="submit" value="Valider" name="submit">
-</form>
-
-<?php require 'footer.php'; ?>
+<?php require_once(__DIR__ . '/header.php'); ?>
+    <form action="traitement.php" method="POST">
+        <div class="champ-formulaire">
+            <label for="title">Titre de l'œuvre</label>
+            <input type="text" name="title" id="title">
+        </div>
+        <div class="champ-formulaire">
+            <label for="artist">Auteur de l'œuvre</label>
+            <input type="text" name="artist" id="artist">
+        </div>
+        <div class="champ-formulaire">
+            <label for="image">URL de l'image</label>
+            <input type="url" name="image" id="image">
+        </div>
+        <div class="champ-formulaire">
+            <label for="description">Description</label>
+            <textarea name="description" id="description"></textarea>
+        </div>
+        <?php if(isset($_GET['error'])): ?>
+            <p>Veuillez remplir correctement les champs pour soumettre le formulaire.</p>
+        <?php endif; ?>
+        <input type="submit" value="Valider" name="submit">
+    </form>
+<?php require_once(__DIR__ . '/footer.php'); ?>

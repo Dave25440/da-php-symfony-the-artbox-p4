@@ -1,8 +1,8 @@
-</main>
-<footer>
-    <p>
-        <strong>© THE ARTBOX</strong> - <em>Tous droits réservés</em>
-    </p>
-</footer>
-</body>
+        </main>
+        <footer>
+            <p>
+                <strong>© THE ARTBOX</strong> - <em>Tous droits réservés</em>
+            </p>
+        </footer>
+    </body>
 </html>
