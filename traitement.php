@@ -19,6 +19,18 @@
         $artist = strip_tags($postData['artist']);
         $image = strip_tags($postData['image']);
         $description = strip_tags($postData['description']);
+
+        require_once(__DIR__ . '/bdd.php');
+
+        $insertArtwork = $mysqlClient->prepare('INSERT INTO artworks(title, artist, image, description) VALUES (:title, :artist, :image, :description)');
+        $insertArtwork->execute([
+            'title' => $title,
+            'artist' => $artist,
+            'image' => $image,
+            'description' => $description,
+        ]);
+
+        header('Location: oeuvre.php?id=' . $mysqlClient->lastInsertId());
     }
 
 ?>
